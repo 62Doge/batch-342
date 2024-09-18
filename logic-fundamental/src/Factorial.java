@@ -16,7 +16,6 @@ public class Factorial {
 
         for (int i = inputNumber; i >= 1; i--){
             factorial = factorial * i ;
-            System.out.println(factorial);
         }
 
         System.out.println(factorial);
