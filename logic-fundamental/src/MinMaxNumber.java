@@ -1,8 +1,8 @@
 public class MinMaxNumber {
     public static void main(String[] args) {
         int satu = 9;
-        int dua = 4;
-        int tiga = 5;
+        int dua = -14;
+        int tiga = -5;
         int empat = 6;
 
         minMax(satu, dua, tiga, empat);
