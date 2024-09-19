@@ -1,14 +1,26 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Days {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String day;
+        String[] nameOfDay = {"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"};
+        boolean isDayValid = false;
 
         System.out.print("Hari : ");
         day = scanner.next();
 
-        whatDay(day);
+        for (int i = 0; i < nameOfDay.length; i++){
+            if (day.equalsIgnoreCase(nameOfDay[i])){
+                isDayValid = true;
+            }
+        }
+        if (isDayValid){
+            whatDay(day);
+        } else {
+            System.out.println("Hari " + day + " tidak valid!");
+        }
     }
 
     public static void whatDay(String day) {

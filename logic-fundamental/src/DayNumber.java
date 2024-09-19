@@ -17,7 +17,7 @@ public class DayNumber {
 
     public static int findDayNumber(String day) {
         int number = 0;
-        switch (day){
+        switch (day.toLowerCase()){
             case "senin" -> number = 1;
             case "selasa" -> number = 2;
             case "rabu" -> number = 3;
