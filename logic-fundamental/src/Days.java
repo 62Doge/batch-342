@@ -24,19 +24,20 @@ public class Days {
     }
 
     public static void whatDay(String day) {
+//        Minggu = 7
         int resultNumber = DayNumber.findDayNumber(day);
-        String kemarinLusa = DayName.findDayName(resultNumber + 5);
+        String kemarinLusa = DayName.findDayName((resultNumber - 2 <= 0) ? resultNumber + 5 : resultNumber - 2);
         System.out.println("Kemarin lusa adalah hari " + kemarinLusa + " (2 hari sebelum) " + day);
 
-        String kemarin = DayName.findDayName(resultNumber + 6);
+        String kemarin = DayName.findDayName((resultNumber - 1 <= 0) ? resultNumber + 6 : resultNumber - 1 );
         System.out.println("Kemarin adalah hari " + kemarin + " (hari sebelum) " + day);
 
         System.out.println("Hari ini adalah " + day + " (didapat dari) " + day);
 
-        String besok = DayName.findDayName(resultNumber + 1);
+        String besok = DayName.findDayName((resultNumber + 1 > 7) ? resultNumber - 6 : resultNumber + 1);
         System.out.println("Besok adalah hari " + besok + " (hari setelah) " + day );
 
-        String besokLusa = DayName.findDayName(resultNumber + 2 );
+        String besokLusa = DayName.findDayName((resultNumber + 2 > 7)? resultNumber - 5 : resultNumber + 2);
         System.out.println("Besok lusa adalah hari " + besokLusa + " (2 hari setelah) " + day);
     }
 }

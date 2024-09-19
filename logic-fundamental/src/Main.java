@@ -1,16 +1,26 @@
 public class Main {
     public static void main(String[] args) {
-        String str = "Ical";
-        int n = 1;
+        int number=15;
+        int numbs = 1;
+        System.out.println("List of odd numbers from 1 to "+number+": ");
 
-        String front = str.substring(0, n);
-
-        // Start this substring at n+1 to omit the char.
-        // Can also be shortened to just str.substring(n+1)
-        // which goes through the end of the string.
-        String back = str.substring(n+1, str.length());
-
-        System.out.println(front + back);
-
+//        for (int i=1; i<=number; i++)
+//        {
+////            if (i%2!=0)
+////            {
+////                System.out.print(i + " ");
+////            }
+//            System.out.println(i);
+//        }
+        do{
+            if (numbs % 2 == 0){
+                System.out.println(" Genap " + numbs);
+                System.out.println();
+            }else{
+                System.out.print("Ganjil " + numbs);
+            }
+            numbs += 1;
+        }while (numbs <= number*2);
     }
+
 }
