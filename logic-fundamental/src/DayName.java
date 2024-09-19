@@ -11,7 +11,7 @@ public class DayName {
         System.out.println(findDayName(number));
     }
 
-    private static String findDayName(int number) {
+    public static String findDayName(int number) {
         String day;
         switch (number) {
             case 1 -> day = "Senin";
