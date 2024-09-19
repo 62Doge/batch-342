@@ -13,14 +13,14 @@ public class DayName {
 
     public static String findDayName(int number) {
         String day;
-        switch (number) {
+        switch (number % 7) {
             case 1 -> day = "Senin";
             case 2 -> day = "Selasa";
             case 3 -> day = "Rabu";
             case 4 -> day = "Kamis";
             case 5 -> day = "Jumat";
             case 6 -> day = "Sabtu";
-            case 7 -> day = "Minggu";
+            case 0 -> day = "Minggu";
             default -> day = "Tidak ada hari ke-" + number;
         }
 

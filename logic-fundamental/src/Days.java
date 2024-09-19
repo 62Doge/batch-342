@@ -24,7 +24,7 @@ public class Days {
         String besok = DayName.findDayName(resultNumber + 1);
         System.out.println("Besok adalah hari " + besok + " (hari setelah) " + day );
 
-        String besokLusa = DayName.findDayName(resultNumber + 2);
+        String besokLusa = DayName.findDayName(resultNumber + 2 );
         System.out.println("Besok lusa adalah hari " + besokLusa + " (2 hari setelah) " + day);
     }
 }
