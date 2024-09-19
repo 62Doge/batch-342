@@ -8,7 +8,11 @@ public class DayNumber {
         System.out.print("Masukkan hari yang anda inginkan: ");
         day = scanner.next();
 
-        System.out.println(findDayNumber(day));
+        if (findDayNumber(day) == 0){
+            System.out.println("Tidak ada hari " + day);
+        }else{
+            System.out.println(findDayNumber(day));
+        }
     }
 
     public static int findDayNumber(String day) {
