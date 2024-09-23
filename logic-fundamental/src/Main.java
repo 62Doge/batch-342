@@ -1,26 +1,27 @@
 public class Main {
     public static void main(String[] args) {
-        int number=15;
-        int numbs = 1;
-        System.out.println("List of odd numbers from 1 to "+number+": ");
 
-//        for (int i=1; i<=number; i++)
-//        {
-////            if (i%2!=0)
-////            {
-////                System.out.print(i + " ");
-////            }
-//            System.out.println(i);
-//        }
-        do{
-            if (numbs % 2 == 0){
-                System.out.println(" Genap " + numbs);
-                System.out.println();
-            }else{
-                System.out.print("Ganjil " + numbs);
+        System.out.println(solution(5, false));
+
+    }
+
+    public static String solution(int day, boolean vacation) {
+        String result = null;
+        if (vacation){
+            if (day == 1 || day == 2 || day == 3 || day == 4 || day == 5){
+                result = "10:00";
+            } else {
+                result = "off";
             }
-            numbs += 1;
-        }while (numbs <= number*2);
+        } else if (!vacation) {
+            if (day == 0 || day == 6){
+                result = "10:00";
+            } else {
+                result = "7:00";
+            }
+        }
+
+        return result;
     }
 
 }
