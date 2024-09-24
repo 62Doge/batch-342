@@ -20,7 +20,6 @@ public class Plate {
         int persons = 0;
         int totalPerson = 0;
 
-
         do {
             printMenu();
             System.out.print("Pilih menu: ");
@@ -59,9 +58,6 @@ public class Plate {
                     break;
             }
         }while (menu != 7);
-
-
-
     }
 
     public static void printData(HashMap<String, Integer> customer){
