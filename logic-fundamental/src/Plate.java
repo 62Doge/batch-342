@@ -14,7 +14,7 @@ public class Plate {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        HashMap<String, Integer> customer = new HashMap<>();
+        HashMap<String, Double> customer = new HashMap<>();
         String gender;
         int menu;
         int persons = 0;
@@ -49,6 +49,7 @@ public class Plate {
                     System.out.println("Total Porsi : " + calcPlates(customer));
                     break;
                 case 7:
+
                     break;
                 case 8:
                     printData(customer);
@@ -58,31 +59,40 @@ public class Plate {
                     break;
             }
         }while (menu != 7);
+
+
+
     }
 
-    public static void printData(HashMap<String, Integer> customer){
+    public static void printData(HashMap<String, Double> customer){
         customer.entrySet().stream()
                 .forEach(entry -> System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue()));
     }
-    private static int calcPlates(HashMap<String, Integer> customer) {
+    private static double calcPlates(HashMap<String, Double> customer) {
         int totalPlates = 0;
+        int totalPerson = 0;
+
+        for (double total : customer.values()){
+            totalPerson += total;
+        }
+
+        if (totalPerson > 5 && totalPerson % 2 == 1){
+            customer.put("Perempuan", customer.get("Perempuan") + 1);
+        }
+
         if (customer.containsKey("Laki - laki")){
             customer.put("Laki - laki", customer.get("Laki - laki") * 2);
         } else if (customer.containsKey("Anak - anak")) {
-            customer.put("Anak - anak", (int) (customer.get("Anak - anak") * 0.5));
+            customer.put("Anak - anak", customer.get("Anak - anak") * 0.5);
         }
-
-        if (totalPlates > 5 && totalPlates % 2 == 1){
-            customer.put("Perempuan", customer.get("Perempuan") + 1);
-        }
-        for (int sum : customer.values()){
+        for (double sum : customer.values()){
             totalPlates += sum;
         }
 
         return totalPlates;
     }
 
-    private static void addPlates(HashMap<String, Integer> customer, String gender, Scanner scanner, int totalPerson) {
+    private static void addPlates(HashMap<String, Double> customer, String gender, Scanner scanner, double totalPerson) {
         System.out.print(gender + " (total porsi): ");
         totalPerson = scanner.nextInt();
 
