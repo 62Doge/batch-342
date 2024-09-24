@@ -1,27 +1,24 @@
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(solution(5, false));
+        String name = "Hello World";
+        System.out.println(name.contains("World"));
+        System.out.println(name.indexOf("teng"));
+//        name = name.toLowerCase().trim();
+//        char[] vocalArr = name.toCharArray();
+//        char[] consonantArr = name.toCharArray();
+//
+//        for (int i = 0; i < vocalArr.length; i++){
+//            if (vocalArr[i] == 'a' || vocalArr[i] == 'i' || vocalArr[i] == 'u' || vocalArr[i] == 'e' || vocalArr[i] == 'o'){
+//                vocalArr = new char[]{vocalArr[i]};
+//            }
+//        }
+//
+//        System.out.println(vocalArr);
 
     }
 
-    public static String solution(int day, boolean vacation) {
-        String result = null;
-        if (vacation){
-            if (day == 1 || day == 2 || day == 3 || day == 4 || day == 5){
-                result = "10:00";
-            } else {
-                result = "off";
-            }
-        } else if (!vacation) {
-            if (day == 0 || day == 6){
-                result = "10:00";
-            } else {
-                result = "7:00";
-            }
-        }
 
-        return result;
-    }
+
 
 }
