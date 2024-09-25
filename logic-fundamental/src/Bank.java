@@ -16,8 +16,8 @@ public class Bank {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int transferOption;
-        int pin = 0;
-        int pinAccess = 123456;
+        String pin = "";
+        String pinAccess = "123456";
         int reserveMoney;
         int accountLength;
         int account;
@@ -25,16 +25,11 @@ public class Bank {
         int bankCode;
 
         do {
-            try {
-                System.out.print("Masukkan PIN: ");
-                pin = scanner.nextInt();
+            System.out.print("Masukkan PIN: ");
+            pin = scanner.next();
 
-                if (pin != pinAccess) {
-                    System.out.println("Pastikan PIN sesuai!");
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Input salah, pastikan memasukkan angka!");
-                scanner.next();
+            if (!pin.equals(pinAccess)) {
+                System.out.println("Pastikan PIN sesuai!");
             }
         } while(pin != pinAccess);
 
