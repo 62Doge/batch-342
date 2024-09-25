@@ -31,7 +31,7 @@ public class Bank {
             if (!pin.equals(pinAccess)) {
                 System.out.println("Pastikan PIN sesuai!");
             }
-        } while(pin != pinAccess);
+        } while(!pin.equals(pinAccess));
 
         System.out.print("Uang yang disetor: ");
         reserveMoney = scanner.nextInt();
@@ -53,6 +53,7 @@ public class Bank {
 
                 if (calcTransfer(reserveMoney, transferNominal, transferOption) < 0){
                     System.out.println("Saldo tidak mencukupi");
+                    System.out.println(reserveMoney);
                 }else {
                     System.out.println("Transaksi berhasil, saldo anda saat ini " +
                             moneyFormat(calcTransfer(reserveMoney, transferNominal, transferOption)));
@@ -76,6 +77,7 @@ public class Bank {
 
                 if (calcTransfer(reserveMoney, transferNominal, transferOption) < 0){
                     System.out.println("Saldo tidak mencukupi");
+                    System.out.println(reserveMoney);
                 }else {
                     System.out.println("Transaksi berhasil, saldo anda saat ini " +
                             moneyFormat(calcTransfer(reserveMoney, transferNominal, transferOption)));
