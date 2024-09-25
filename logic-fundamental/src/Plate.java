@@ -66,7 +66,6 @@ public class Plate {
     }
 
     public static void printData(HashMap<String, Double> customer){
-        double totalPortion = 0;
         customer.entrySet().stream()
                 .forEach(entry -> System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue()));
 
