@@ -46,6 +46,7 @@ public class Plate {
                     addPlates(customer, gender, scanner, persons);
                     break;
                 case 6:
+                    printData(customer);
                     System.out.println("Total Porsi : " + calcPlates(customer));
                     break;
                 case 7:
@@ -65,28 +66,37 @@ public class Plate {
     }
 
     public static void printData(HashMap<String, Double> customer){
+        double totalPortion = 0;
         customer.entrySet().stream()
                 .forEach(entry -> System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue()));
+
     }
     private static double calcPlates(HashMap<String, Double> customer) {
-        int totalPlates = 0;
+        double totalPlates = 0;
         int totalPerson = 0;
 
-        for (double total : customer.values()){
+        for (double total : customer.values()) {
             totalPerson += total;
         }
 
-        if (totalPerson > 5 && totalPerson % 2 == 1){
-            customer.put("Perempuan", customer.get("Perempuan") + 1);
+        if (totalPerson > 5 && totalPerson % 2 == 1 && customer.containsKey("Perempuan")) {
+            customer.put("Perempuan", customer.get("Perempuan") + customer.get("Perempuan"));
         }
 
-        if (customer.containsKey("Laki - laki")){
-            customer.put("Laki - laki", customer.get("Laki - laki") * 2);
-        } else if (customer.containsKey("Anak - anak")) {
-            customer.put("Anak - anak", customer.get("Anak - anak") * 0.5);
+        if (customer.containsKey("Laki - laki")) {
+            totalPlates += customer.get("Laki - laki") * 2;
         }
-        for (double sum : customer.values()){
-            totalPlates += sum;
+        if (customer.containsKey("Perempuan")) {
+            totalPlates += customer.get("Perempuan");
+        }
+        if (customer.containsKey("Remaja")) {
+            totalPlates += customer.get("Remaja");
+        }
+        if (customer.containsKey("Anak - anak")) {
+            totalPlates += customer.get("Anak - anak") * 0.5;
+        }
+        if (customer.containsKey("Balita")) {
+            totalPlates += customer.get("Balita");
         }
 
         return totalPlates;
