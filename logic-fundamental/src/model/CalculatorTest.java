@@ -8,10 +8,10 @@ public class CalculatorTest {
         System.out.println("Using parameter constructor");
         System.out.println("Number 1: " + calculator.getNumber1());
         System.out.println("Number 2: " + calculator.getNumber2());
-        System.out.println(calculator.sum());
-        System.out.println(calculator.minus());
-        System.out.println(calculator.divide());
-        System.out.println(calculator.multiply());
+        System.out.println("Sum : " + calculator.sum());
+        System.out.println("Minus : " + calculator.minus());
+        System.out.println("Divide : " + calculator.divide());
+        System.out.println("Multiply : " + calculator.multiply());
 
         System.out.println();
         // Using empty Constructor
@@ -22,9 +22,9 @@ public class CalculatorTest {
         System.out.println("Using empty constructor");
         System.out.println("Number 1: " + calculator1.getNumber1());
         System.out.println("Number 2: " + calculator1.getNumber2());
-        System.out.println(calculator1.sum());
-        System.out.println(calculator1.minus());
-        System.out.println(calculator1.divide());
-        System.out.println(calculator1.multiply());
+        System.out.println("Sum : " + calculator1.sum());
+        System.out.println("Minus : " + calculator1.minus());
+        System.out.println("Divide : " + calculator1.divide());
+        System.out.println("Multiply : " + calculator1.multiply());
     }
 }
