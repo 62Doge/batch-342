@@ -3,11 +3,18 @@ package fundamental;
 import java.util.HashMap;
 
 public class HashMapEx {
-    public static void main(String[] args) {
-        HashMap<Integer, String> capitalCities = new HashMap<>();
+    public static HashMap<Integer, String> capitalCities = new HashMap<>();
+    static {
         capitalCities.put(1, "Bekasi");
         capitalCities.put(2, "Depok");
         capitalCities.put(3, "Jakarta");
+    }
+
+    public static void main(String[] args) {
+
+
+
+
 
         for (var value : capitalCities.keySet()){
             System.out.print(value + " " + capitalCities.get(value) + " ");
