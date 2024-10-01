@@ -38,11 +38,12 @@ public class Calculator {
         result = this.number1 * this.number2;
         return result;
     }
-    public int divide(){
-        int result;
-        result = this.number1 / this.number2;
+    public double divide(){
+        double result;
+        result = (double) this.number1 / this.number2;
         return result;
     }
+
 
     public int minus(){
         int result;
