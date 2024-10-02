@@ -50,7 +50,23 @@ join type_dosen on type_dosen.id = dosen.id_type_dosen
 where nama_mahasiswa = 'Budi Gunawan';
 
 --8
---skip
+create view view_mahasiswa_teknik_informatika
+	as
+	select kode_mahasiswa as "Kode Mahasiswa",
+		nama_mahasiswa as "Nama Mahasiswa",
+		nama_jurusan as "Nama Jurusan",
+		agama.deskripsi as "Agama",
+		nama_dosen as "Nama Dosen",
+		status_jurusan as "Status Jurusan",
+		type_dosen.deskripsi as "Deskripsi"
+	from mahasiswa
+	join jurusan on jurusan.id = mahasiswa.id_jurusan
+	join agama on agama.id = mahasiswa.id_agama
+	join dosen on dosen.id_jurusan = jurusan.id
+	join type_dosen on type_dosen.id = dosen.id_type_dosen
+	where nama_mahasiswa = 'Budi Gunawan';
+
+select * from view_mahasiswa_teknik_informatika;
 
 --9
 select nama_mahasiswa as "Nama Mahasiswa", nilai as "Nilai"
